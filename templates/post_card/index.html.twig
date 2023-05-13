@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PostCard index{% endblock %}
+
+{% block body %}
+    <h1>PostCard index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post_card in post_cards %}
+            <tr>
+                <td>{{ post_card.id }}</td>
+                <td>{{ post_card.name }}</td>
+                <td>{{ post_card.date ? post_card.date|date('Y-m-d') : '' }}</td>
+                <td>{{ post_card.price }}</td>
+                <td>{{ post_card.description }}</td>
+                <td>
+                    <a href="{{ path('app_post_card_show', {'id': post_card.id}) }}">show</a>
+                    <a href="{{ path('app_post_card_edit', {'id': post_card.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_post_card_new') }}">Create new</a>
+{% endblock %}
