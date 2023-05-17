@@ -6,6 +6,8 @@ use App\Entity\PostCard;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Category;
 
 class PostCardType extends AbstractType
 {
@@ -16,7 +18,17 @@ class PostCardType extends AbstractType
             ->add('date')
             ->add('price')
             ->add('description')
-            ->add('category')
+            ->add('category', EntityType::class, [
+                'label' => 'Catégories',
+                'label_attr' => [
+                    'class' => 'font-bold'
+                ],
+                'class' => Category::class,
+                'choice_label' => 'city',
+                'required' => true,
+                'placeholder' => 'Selectionnez une catégorie',
+                'attr' => ['data-placeholder' => 'choose a category'],
+            ]);
         ;
     }
 

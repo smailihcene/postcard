@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\PostCard;
-use App\Form\PostCard1Type;
+use App\Form\PostCardType;
 use App\Repository\PostCardRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,7 +25,7 @@ class PostCardController extends AbstractController
     public function new(Request $request, PostCardRepository $postCardRepository): Response
     {
         $postCard = new PostCard();
-        $form = $this->createForm(PostCard1Type::class, $postCard);
+        $form = $this->createForm(PostCardType::class, $postCard);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -51,7 +51,7 @@ class PostCardController extends AbstractController
     #[Route('/{id}/edit', name: 'app_post_card_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, PostCard $postCard, PostCardRepository $postCardRepository): Response
     {
-        $form = $this->createForm(PostCard1Type::class, $postCard);
+        $form = $this->createForm(PostCardType::class, $postCard);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
