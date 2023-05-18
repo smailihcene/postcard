@@ -19,8 +19,8 @@
                 <td>{{ category.id }}</td>
                 <td>{{ category.city }}</td>
                 <td>
-                    <a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
+                    <a class="btn btn-outline-success" href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
+                    <a class="btn btn-outline-success" href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -32,5 +32,5 @@
     </table>
 
     {# <a href="{{ path('app_category_new') }}">Create new</a> #}
-    <a class="btn btn-success" href="{{ path('app_category_new') }}" role="button">Create new</a>
+    <a class="btn btn-outline-success" href="{{ path('app_category_new') }}" role="button">Create new</a>
 {% endblock %}
