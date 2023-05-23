@@ -1,26 +1,33 @@
 <div
-    <div class="nav-scroller  py-2 ">
-        <nav class="nav d-flex justify-content-between font-monospace">
-            <li class="nav-item ">
-                <a class="nav-link fw-bold fs-4" href="{{ path("app_home") }}">Home</a>
+<div class="nav-scroller  py-2 ">
+    <nav class="nav d-flex justify-content-between font-monospace">
+        <li class="nav-item ">
+            <a class="nav-link fw-bold fs-4" href="{{ path("app_home") }}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fw-bold fs-4" href="{{ path("app_post_card_index") }}">Post Card</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fw-bold fs-4" href="{{ path("app_category_index") }}">Category</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fw-bold fs-4" href="">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fw-bold fs-4" href="">À propos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fw-bold fs-4" href="{{ path('app_login') }}">login</a>
+        </li>
+        {% if app.user %}
+            <li class="nav-item"><a class="nav-link fw-bold fs-4 text-danger" href="{{ path('app_logout') }}">logout</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold fs-4" href="{{ path("app_post_card_index") }}">Post Card</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold fs-4" href="{{ path("app_category_index") }}">Category</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold fs-4" href="">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold fs-4" href="">À propos</a>
-            </li>
-        </nav>
-    </div>
+        {% endif %}
+    </nav>
+</div>
 <!-- je sais pas si je fais comme le haut ou je garde , à tester -->
 
-    {# <div class="nav-scroller py-1 mb-2">
+{# <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between font-monospace">
             <li class="nav-item ">
                 <a class="nav-link fw-light text-decoration-underline fs-6" href="#">country</a>
