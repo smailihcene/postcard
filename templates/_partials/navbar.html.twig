@@ -1,31 +1,33 @@
-<div
-<div class="nav-scroller  py-2 ">
-    <nav class="nav d-flex justify-content-between font-monospace">
-        <li class="nav-item ">
-            <a class="nav-link fw-bold fs-4" href="{{ path("app_home") }}">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fw-bold fs-4" href="{{ path("app_post_card_index") }}">Post Card</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fw-bold fs-4" href="{{ path("app_category_index") }}">Category</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fw-bold fs-4" href="">Contact</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fw-bold fs-4" href="">À propos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fw-bold fs-4" href="{{ path('app_login') }}">login</a>
-        </li>
-        {% if app.user %}
-            <li class="nav-item"><a class="nav-link fw-bold fs-4 text-danger" href="{{ path('app_logout') }}">logout</a>
-            </li>
-        {% endif %}
-    </nav>
-</div>
-<!-- je sais pas si je fais comme le haut ou je garde , à tester -->
+<div>
+    <div class="py-4">
+        <nav >
+            <ul class="flex justify-center gap-4">
+                <li class="">
+                    <a class="text-black hover:text-white" href="{{ path("app_home") }}">Home</a>
+                </li>
+                <li class="">
+                    <a class="" href="{{ path("app_post_card_index") }}">Post Card</a>
+                </li>
+                <li class="">
+                    <a class="" href="{{ path("app_category_index") }}">Category</a>
+                </li>
+                <li class="">
+                    <a class="" href="">Contact</a>
+                </li>
+                <li class="">
+                    <a class="" href="">À propos</a>
+                </li>
+                <li class="">
+                    <a class="" href="{{ path('app_login') }}">login</a>
+                </li>
+                {% if app.user %}
+                    <li class=""><a class=" text-danger" href="{{ path('app_logout') }}">logout</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    <!-- je sais pas si je fais comme le haut ou je garde , à tester -->
 
 {# <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between font-monospace">
