@@ -1,6 +1,6 @@
 <div>
     <div class="py-4 ">
-        <nav >
+        <nav class="flex justify-center space-x-4">
             <ul class="flex justify-center gap-4 ">
                 <li class="">
                     <a class="text-black hover:text-white" href="{{ path("app_home") }}">Home</a>
@@ -9,20 +9,23 @@
                     <a class="" href="{{ path("app_post_card_index") }}">Post Card</a>
                 </li>
                 <li class="">
-                    <a class="" href="{{ path("app_category_index") }}">Category</a>
+                    <a class="text-black hover:text-white" href="{{ path("app_category_index") }}">Category</a>
                 </li>
                 <li class="">
                     <a class="" href="">Contact</a>
                 </li>
                 <li class="">
-                    <a class="" href="">À propos</a>
-                </li>
-                <li class="">
-                    <a class="" href="{{ path('app_login') }}">login</a>
+                    <a class="text-black hover:text-white" href="">À propos</a>
                 </li>
                 {% if app.user %}
-                    <li class=""><a class=" text-danger" href="{{ path('app_logout') }}">logout</a>
+                    <li class="">
+                        <a class="text-red-500 hover:text-red-700" href="{{ path('app_logout') }}">logout</a>
                     </li>
+                {% else %}
+                    <li class="">
+                        <a class="text-green-500 hover:text-green-700" href="{{ path('app_login') }}">login</a>
+                    </li>
+
                 {% endif %}
             </ul>
         </nav>
