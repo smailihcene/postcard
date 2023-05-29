@@ -7,7 +7,7 @@ module.exports = {
         'greenc': '#cfeed1'
       },
       backgroundImage: {
-        'header': "url('/assets/media/images.jpg')"
+        'header': "url('/assets/media/facile.jpg')"
       }
     },
   },
