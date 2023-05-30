@@ -24,7 +24,7 @@ class RegistrationFormType extends AbstractType
                     'placeholder' => 'exemple@mail.fr'
                 ],
                 'label_attr' => [
-                    'class' => 'text-center text-black ',
+                    'class' => 'text-center text-black font-semibold',
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -45,7 +45,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'label'=> 'Password',  /* c'est que pour le nom*/
                 'label_attr'=> [
-                    'font-bold text-center text-red-300',
+                    'text-center text-red-300 font-semibold',
                     ],
                 'constraints' => [
                     new NotBlank([
